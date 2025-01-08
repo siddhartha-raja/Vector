@@ -1,1 +1,1 @@
-This project is developed using Python and Flask.
+This project is developed using Python, Flask, and Django.
