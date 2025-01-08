@@ -1,1 +1,2 @@
-# My Git Demo
+# Project Documentation
+This project is developed using Python.
