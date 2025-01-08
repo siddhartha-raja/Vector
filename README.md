@@ -1,2 +1,1 @@
-# Project Documentation
-This project is developed using Python.
+This project is developed using Python and Flask.
