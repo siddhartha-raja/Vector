@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 This is the master branch
 This is an update from the master branch
+
+This is the feature-1 branch
+>>>>>>> 71fea1b (Added feature-1 changes)
