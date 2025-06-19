@@ -1,14 +1,20 @@
-name: Hello World
+name: Install Git Manually
 
 on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:  # 👈 This adds manual trigger support
+  workflow_dispatch:  # 👈 Manual trigger
 
 jobs:
-  say-hello:
+  install-git:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Print Hello World
-      run: echo "👋 Hello, World from GitHub Actions!"
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Update apt and Install Git
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git
+
+    - name: Show Git Version
+      run: git --version
