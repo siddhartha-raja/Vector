@@ -1,0 +1,9 @@
+trigger:
+- main  # or your branch name
+
+pool:
+  name: Default  # or the custom pool name you used
+
+steps:
+- script: echo "Hello, World from Azure DevOps!"
+  displayName: 'Run Hello World Script'

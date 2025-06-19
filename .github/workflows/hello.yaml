@@ -1,0 +1,20 @@
+name: Install Git Manually
+
+on:
+  workflow_dispatch:  # 👈 Manual trigger
+
+jobs:
+  install-git:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Update apt and Install Git
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git
+
+    - name: Show Git Version
+      run: git --version
