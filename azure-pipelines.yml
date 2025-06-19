@@ -2,15 +2,17 @@ trigger:
   - master
 
 pool:
-  name: Default  # Use your self-hosted agent pool name
+  name: Default
 
 steps:
+  - checkout: self
+
   - task: Maven@3
     inputs:
-      mavenPomFile: 'hello-world/pom.xml'  # 👈 Your POM path
+      mavenPomFile: 'hello-world/pom.xml'
       goals: 'package'
       javaHomeOption: 'Path'
-      jdkDirectory: '/usr/lib/jvm/java-21-openjdk-amd64'  # 👈 Direct Java path
+      jdkDirectory: '/usr/lib/jvm/java-21-openjdk-amd64'
       mavenVersionOption: 'Default'
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
