@@ -1,9 +1,18 @@
+
 trigger:
-- main  # or your branch name
+  - master
 
 pool:
-  name: Default  # or the custom pool name you used
+  name: Default  # Use your self-hosted agent pool name here
 
 steps:
-- script: echo "Hello, World from Azure DevOps!"
-  displayName: 'Run Hello World Script'
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'hello-world/pom.xml'  # 👈 Your POM path
+      goals: 'package'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '21'
+      mavenVersionOption: 'Default'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      codeCoverageToolOption: 'None'
